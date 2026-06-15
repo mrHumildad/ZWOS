@@ -4,11 +4,10 @@ const Nations = ({data}) => {
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [selectedSing, setSelectedSing] = useState('Aries');
   const getTeamZodiacs = (team) => {
-    console.log(team)
     const zodiacs = {};
     team.players.forEach(player => {
       if (!zodiacs[player.zodiac]) {
-        zodiacs[player.zodiac] = 1;
+        zodiacs[player.zodiac] = 0;
       }
       zodiacs[player.zodiac]++;
     });
@@ -47,7 +46,7 @@ const Nations = ({data}) => {
           </tr>
         </thead>
         <tbody>
-          {data.squads
+          {data.teams
             .slice()
             .sort((a, b) => {
               const countA = a.players.filter(p => p.zodiac === selectedSing).length;

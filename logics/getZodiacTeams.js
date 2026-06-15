@@ -1,4 +1,4 @@
-import squads from '../data/squads.json';
+import teams from '../data/teams.json';
 import zodiacsMetadata from '../data/zodiacs.json';
 
 const ZODIAC_ORDER = [
@@ -7,7 +7,7 @@ const ZODIAC_ORDER = [
 ];
 
 export default function getZodiacTeams() {
-  const teams = ZODIAC_ORDER.map(name => ({
+  const zodiacTeams = ZODIAC_ORDER.map(name => ({
     name,
     symbol: zodiacsMetadata[name].symbol,
     element: zodiacsMetadata[name].element,
@@ -17,16 +17,15 @@ export default function getZodiacTeams() {
     players: []
   }));
 
-  for (const squad of squads) {
-    const code = squad.fifa_code;
+  for (const squad of teams) {
     for (const player of squad.players) {
       const zodiac = player.zodiac;
-      if (teams.some(t => t.name === zodiac)) {
-        const team = teams.find(t => t.name === zodiac);
-        team.players.push({ ...player, fifa_code: code });
+      const team = zodiacTeams.find(t => t.name === zodiac);
+      if (team) {
+        team.players.push({ ...player, fifa_code: squad.fifa_code });
       }
     }
   }
 
-  return teams;
+  return zodiacTeams;
 }

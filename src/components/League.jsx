@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import zodiacMatches from '../../data/matches.json';
+import getZodiacTeams from '../../logics/getZodiacTeams';
 
 const GROUPS = [
   {
@@ -16,8 +17,9 @@ const GROUPS = [
   },
 ];
 
-export default function League({ data, setSelectedTeam, setTab }) {
+export default function League({ data, setSelectedTeam, setSelectedMatch, setTab }) {
   const { zodiacs } = data;
+  const schools = getZodiacTeams();
   const [groupIndex, setGroupIndex] = useState(0);
 
   const group = GROUPS[groupIndex];
@@ -114,28 +116,31 @@ export default function League({ data, setSelectedTeam, setTab }) {
           </tr>
         </thead>
         <tbody>
-          {standings.map((team) => (
-            <tr key={team.name} onClick={() => { console.log(team); setSelectedTeam(team); setTab('roster'); }} style={{ cursor: 'pointer' }}>
-              <td>
-                {zodiacs[team.name]?.symbol} {team.name}
-              </td>
-              <td>{team.played}</td>
-              <td>{team.wins}</td>
-              <td>{team.draws}</td>
-              <td>{team.losses}</td>
-              <td>{team.goalsFor}</td>
-              <td>{team.goalsAgainst}</td>
-              <td>{team.goalDiff}</td>
-              <td>{team.points}</td>
-            </tr>
-          ))}
+          {standings.map((team) => {
+            const fullTeam = schools.find((s) => s.name === team.name);
+            return (
+              <tr key={team.name} onClick={() => { console.log(fullTeam); setSelectedTeam(fullTeam); setTab('roster'); }} style={{ cursor: 'pointer' }}>
+                <td>
+                  {zodiacs[team.name]?.symbol} {team.name}
+                </td>
+                <td>{team.played}</td>
+                <td>{team.wins}</td>
+                <td>{team.draws}</td>
+                <td>{team.losses}</td>
+                <td>{team.goalsFor}</td>
+                <td>{team.goalsAgainst}</td>
+                <td>{team.goalDiff}</td>
+                <td>{team.points}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
 
       <h3>Matches</h3>
       <ul className="league-matches">
         {groupMatches.map((match, index) => (
-          <li key={index} className="match-item">
+          <li key={index} className="match-item" onClick={() => { console.log(match); setSelectedMatch(match); setTab('match'); }}>
             {zodiacs[match.home_team]?.symbol} {match.home_team} vs{' '}
             {zodiacs[match.away_team]?.symbol} {match.away_team} —{' '}
             {match.home_score ?? '-'} - {match.away_score ?? '-'}
