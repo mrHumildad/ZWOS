@@ -4,8 +4,20 @@ import { rating2goals } from '../logic/rating2goals';
    
 const Match = ({ selectedMatch, setTab }) => {
   console.log('Selected Match:', selectedMatch);
+  
   const homeTeam = zodiacTeams.find(team => team.name === selectedMatch.home_team);
   const awayTeam = zodiacTeams.find(team => team.name === selectedMatch.away_team);
+
+  if (selectedMatch.status === 'scheduled') {
+    return (
+      <div className="match-container">
+        <h2>Match Scheduled</h2>
+        <p>{selectedMatch.home_team} vs {selectedMatch.away_team}</p>
+        <p>Date: {selectedMatch.date}</p>
+        <button onClick={() => setTab('league')}>Back to League</button>
+      </div>
+    );
+  }
   const home11 = getBest11(homeTeam);
   const away11 = getBest11(awayTeam);
 

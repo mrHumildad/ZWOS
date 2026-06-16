@@ -6,48 +6,54 @@
         "away_team": "Cancer",
         "home_score": null,
         "away_score": null,
-        "status": "scheduled",
-        "stats": {}
+        "status": "ongoing",
+        "stats": {},
+        "turn": "day1"
       },
       {
         "home_team": "Libra",
         "away_team": "Capricorn",
         "home_score": null,
         "away_score": null,
-        "status": "scheduled",
-        "stats": {}
+        "status": "ongoing",
+        "stats": {},
+        "turn": "day1"
       },
       {
         "home_team": "Taurus",
         "away_team": "Leo",
         "home_score": null,
         "away_score": null,
-        "status": "scheduled",
-        "stats": {}
+        "status": "ongoing",
+        "stats": {},
+        "turn": "day1"
       },
       {
         "home_team": "Scorpio",
         "away_team": "Aquarius",
         "home_score": null,
         "away_score": null,
-        "status": "scheduled",
-        "stats": {}
+        "status": "ongoing",
+        "stats": {},
+        "turn": "day1"
       },
       {
         "home_team": "Gemini",
         "away_team": "Virgo",
         "home_score": null,
         "away_score": null,
-        "status": "scheduled",
-        "stats": {}
+        "status": "ongoing",
+        "stats": {},
+        "turn": "day1"
       },
       {
         "home_team": "Sagittarius",
         "away_team": "Pisces",
         "home_score": null,
         "away_score": null,
-        "status": "scheduled",
-        "stats": {}
+        "status": "ongoing",
+        "stats": {},
+        "turn": "day1"
       }
     ]
   },
@@ -59,7 +65,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day2"
       },
       {
         "home_team": "Cancer",
@@ -67,7 +74,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day2"
       },
       {
         "home_team": "Scorpio",
@@ -75,7 +83,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day2"
       },
       {
         "home_team": "Aquarius",
@@ -83,7 +92,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day2"
       },
       {
         "home_team": "Sagittarius",
@@ -91,7 +101,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day2"
       },
       {
         "home_team": "Virgo",
@@ -99,7 +110,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day2"
       }
     ]
   },
@@ -111,7 +123,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day3"
       },
       {
         "home_team": "Capricorn",
@@ -119,7 +132,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day3"
       },
       {
         "home_team": "Taurus",
@@ -127,7 +141,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day3"
       },
       {
         "home_team": "Leo",
@@ -135,7 +150,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day3"
       },
       {
         "home_team": "Gemini",
@@ -143,7 +159,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day3"
       },
       {
         "home_team": "Virgo",
@@ -151,7 +168,8 @@
         "home_score": null,
         "away_score": null,
         "status": "scheduled",
-        "stats": {}
+        "stats": {},
+        "turn": "day3"
       }
     ]
   }
