@@ -1,52 +1,99 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import zodiacTeams from '../../data/updatedZTeams.json';
-const ZWC26 = ({data}) => {
+
+const ZWC26 = () => {
   const zTeams = zodiacTeams;
   const [selectedTeam, setSelectedTeam] = useState(null);
-  console.log(zTeams);
+  const signColor = selectedTeam ? `var(--${selectedTeam.name.toLowerCase()})` : 'var(--cosmic-blue)';
   return (
-    <div>
-      {selectedTeam && (
-        <div>
-          <h2>{selectedTeam.name} {selectedTeam.symbol}</h2>
-          <h3>Goalkeepers</h3>
-          <ul>
-            {selectedTeam.players.filter(p => p.pos === 'GK').map((player, index) => (
-              <li key={index}>{player.number}. {player.name} ({player.fifa_code})</li>
-            ))}
-          </ul>
-          <h3>Defenders</h3>
-          <ul>
-            {selectedTeam.players.filter(p => p.pos === 'DF').map((player, index) => (
-              <li key={index}>{player.number}. {player.name} ({player.fifa_code})</li>
-            ))}
-          </ul>
-          <h3>Midfielders</h3>
-          <ul>
-            {selectedTeam.players.filter(p => p.pos === 'MF').map((player, index) => (
-              <li key={index}>{player.number}. {player.name} ({player.fifa_code})</li>
-            ))}
-          </ul>
-          <h3>Forwards</h3>
-          <ul>
-            {selectedTeam.players.filter(p => p.pos === 'FW').map((player, index) => (
-              <li key={index}>{player.number}. {player.name} ({player.fifa_code})</li>
-            ))}
-          </ul>
-          <button onClick={() => setSelectedTeam(null)}>Back to all teams</button>
+    <div className="zw-section">
+      {selectedTeam ? (
+        <div className="zw-card" style={{ padding: '24px', borderLeftColor: signColor }}>
+          <h3 style={{ fontSize: '18px', color: 'var(--gold)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ color: signColor }}>{selectedTeam.symbol}</span>
+            <span>{selectedTeam.name}</span>
+          </h3>
+          {['GK', 'DF', 'MF', 'FW'].map((pos) => {
+            const players = selectedTeam.players.filter(p => p.pos === pos);
+            if (!players.length) return null;
+            return (
+              <div key={pos} style={{ marginBottom: '12px' }}>
+                <div
+                  style={{
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.14em',
+                    color: 'var(--text-secondary)',
+                    textTransform: 'uppercase',
+                    marginBottom: '6px',
+                  }}
+                >
+                  {pos}
+                </div>
+                <ul style={{ display: 'grid', gap: '4px', listStyle: 'none', padding: 0, margin: 0 }}>
+                  {players.map((player, index) => (
+                    <li
+                      key={index}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '6px 8px',
+                        borderRadius: '8px',
+                        background: 'rgba(255, 255, 255, .02)',
+                        fontSize: '13px',
+                      }}
+                    >
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '12px', width: '22px', textAlign: 'right' }}>{player.number}.</span>
+                      <span style={{ flex: 1 }}>{player.name}</span>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>[{player.fifa_code}]</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <button onClick={() => setSelectedTeam(null)} className="zw-btn">Back to all teams</button>
+          </div>
+        </div>
+      ) : (
+        <div style={{ display: 'grid', gap: '12px' }}>
+          {zTeams.map((team, index) => (
+            <div
+              key={index}
+              className="zw-card"
+              style={{ padding: '18px 20px', cursor: 'pointer', borderLeftColor: `var(--${team.name.toLowerCase()})` }}
+              onClick={() => setSelectedTeam(team)}
+            >
+              <h3 style={{ fontSize: '17px', color: 'var(--gold)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ color: `var(--${team.name.toLowerCase()})` }}>{team.symbol}</span>
+                <span>{team.name}</span>
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(80px, 1fr))', gap: '8px' }}>
+                {['GK', 'DF', 'MF', 'FW'].map((pos) => (
+                  <div
+                    key={pos}
+                    style={{
+                      fontSize: '12px',
+                      color: 'var(--text-secondary)',
+                      background: 'rgba(255,255,255,.05)',
+                      padding: '6px 8px',
+                      borderRadius: '8px',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <div style={{ fontSize: '10px', letterSpacing: '0.1em', opacity: 0.7, marginBottom: '2px' }}>{pos}</div>
+                    <div style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{team.players.filter(player => player.pos === pos).length}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
-      {!selectedTeam && zTeams.map((team, index) => (
-        <div key={index} onClick={() => setSelectedTeam(team)} style={{ cursor: 'pointer' }}>
-          <h2>{team.name} {team.symbol}</h2>
-          <p>GK: {team.players.filter(player => player.pos === 'GK').length}</p>
-          <p>DF: {team.players.filter(player => player.pos === 'DF').length}</p>
-          <p>MF: {team.players.filter(player => player.pos === 'MF').length}</p>
-          <p>FW: {team.players.filter(player => player.pos === 'FW').length}</p>
-        </div>
-      ))}
     </div>
   );
-}
+};
 
 export default ZWC26;

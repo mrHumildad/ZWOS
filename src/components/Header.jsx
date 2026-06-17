@@ -1,11 +1,12 @@
-import React from 'react';
-
 const Header = () => {
   return (
-    <div>
-      
-    </div>
+    <header className="zw-nav">
+      <div className="brand">ZWOS</div>
+      <nav>
+        <button className="zw-btn" aria-label="league">League</button>
+      </nav>
+    </header>
   );
-}
+};
 
 export default Header;

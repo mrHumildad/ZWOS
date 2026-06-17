@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Footer = () => {
   return (
-    <div>
-      
-    </div>
+    <footer className="zw-footer">
+      <div>ZODIACSOCCER</div>
+    </footer>
   );
-}
+};
 
 export default Footer;

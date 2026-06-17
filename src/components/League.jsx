@@ -91,61 +91,89 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
     setGroupIndex((prev) => (prev - 1 + GROUPS.length) % GROUPS.length);
   };
 
+  const getPositionBadgeClass = (position) => {
+    if (position === 0) return 'zw-badge zw-badge-gold';
+    if (position === 1) return 'zw-badge zw-badge-silver';
+    if (position === 2) return 'zw-badge zw-badge-bronze';
+    return 'zw-badge';
+  };
+
   return (
-    <div className="league-container">
-      <div className="league-header">
-        <button onClick={handlePrevGroup}>← Previous Group</button>
-        <h2>{group.name} Group</h2>
-        <button onClick={handleNextGroup}>Next Group →</button>
-      </div>
+    <div className="zw-section">
+      <div className="zw-card zw-card-gold" style={{ padding: '28px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <button onClick={handlePrevGroup} className="zw-btn">← Previous Group</button>
+          <h2 style={{ textAlign: 'center', fontSize: '24px', color: 'var(--gold)' }}>{group.name} Group</h2>
+          <button onClick={handleNextGroup} className="zw-btn">Next Group →</button>
+        </div>
 
-      <h3>Standings</h3>
-      <table className="league-table">
-        <thead>
-          <tr>
-            <th>Team</th>
-            <th>P</th>
-            <th>W</th>
-            <th>D</th>
-            <th>L</th>
-            <th>GF</th>
-            <th>GA</th>
-            <th>GD</th>
-            <th>Pts</th>
-          </tr>
-        </thead>
-        <tbody>
-          {standings.map((team) => {
-            const fullTeam = schools.find((s) => s.name === team.name);
-            return (
-              <tr key={team.name} onClick={() => { console.log(fullTeam); setSelectedTeam(fullTeam); setTab('roster'); }} style={{ cursor: 'pointer' }}>
-                <td>
-                  {team.symbol} {team.name}
-                </td>
-                <td>{team.played}</td>
-                <td>{team.wins}</td>
-                <td>{team.draws}</td>
-                <td>{team.losses}</td>
-                <td>{team.goalsFor}</td>
-                <td>{team.goalsAgainst}</td>
-                <td>{team.goalDiff}</td>
-                <td>{team.points}</td>
+        <div style={{ overflowX: 'auto' }}>
+          <table className="zw-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>P</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>Pts</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {standings.map((team, index) => {
+                const fullTeam = schools.find((s) => s.name === team.name);
+                const badgeClass = getPositionBadgeClass(index);
+                return (
+                  <tr key={team.name} className="clickable" onClick={() => { setSelectedTeam(fullTeam); setTab('roster'); }}>
+                    <td>
+                      <span className={badgeClass}>{index + 1}</span>
+                    </td>
+                    <td>
+                      <span style={{ color: `var(--${team.name.toLowerCase()})` }}>{team.symbol}</span>
+                      <span style={{ marginLeft: '10px' }}>{team.name}</span>
+                    </td>
+                    <td>{team.played}</td>
+                    <td>{team.wins}</td>
+                    <td>{team.draws}</td>
+                    <td>{team.losses}</td>
+                    <td>{team.goalsFor}</td>
+                    <td>{team.goalsAgainst}</td>
+                    <td>{team.goalDiff}</td>
+                    <td style={{ color: 'var(--gold)', fontWeight: 600 }}>{team.points}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
 
-      <h3>Matches</h3>
-      <ul className="league-matches">
-        {groupMatches.map((match, index) => (
-          <li key={index} className="match-item" onClick={() => { console.log(match); setSelectedMatch(match); setTab('match'); }}>
-            {zodiacTeams.find((t) => t.name === match.home_team)?.symbol ?? ''} {match.home_team} vs{' '}
-            {zodiacTeams.find((t) => t.name === match.away_team)?.symbol ?? ''} {match.away_team} —{' '}
-            {match.home_score ?? '-'} - {match.away_score ?? '-'}
-          </li>
-        ))}
-      </ul>
+        <h3 style={{ margin: '24px 0 12px', color: 'var(--gold)' }}>Matches</h3>
+        <div style={{ display: 'grid', gap: '10px' }}>
+          {groupMatches.map((match, index) => (
+            <div
+              key={index}
+              className="zw-card"
+              style={{ padding: '14px 18px', cursor: 'pointer' }}
+              onClick={() => { setSelectedMatch(match); setTab('match'); }}
+            >
+              <span style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>
+                {zodiacTeams.find((t) => t.name === match.home_team)?.symbol ?? ''} {match.home_team}
+              </span>
+              <span style={{ color: 'var(--gold)', fontWeight: 600, margin: '0 10px' }}>vs</span>
+              <span style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>
+                {zodiacTeams.find((t) => t.name === match.away_team)?.symbol ?? ''} {match.away_team}
+              </span>
+              <span style={{ marginLeft: 'auto', color: 'var(--gold-light)', fontWeight: 600, fontSize: '14px' }}>
+                {match.home_score ?? '-'} - {match.away_score ?? '-'}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
