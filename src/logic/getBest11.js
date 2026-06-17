@@ -1,4 +1,4 @@
-import zodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
+import fifaTeams from "../../data/raw/teams.json" with { type: "json" };
 
 const squadRestrictions = {
   GK: { min: 1, max: 1 },
@@ -19,6 +19,18 @@ export const getFantaRating = (p) => {
     return Number(day.overallRating) + Number(day.stats?.goals ?? 0) * 3 + Number(day.stats?.assists ?? 0) * 2;
   }
   return Number(p?.overallRating ?? 4);
+};
+
+export const getShortName = (name) => {
+  if (!name) return "";
+  const parts = name.trim().split(/\s+/);
+  return parts.length > 1 ? parts[parts.length - 1] : name;
+};
+
+export const getFlagFromFifaCode = (fifaCode) => {
+  if (!fifaCode) return { flag: "", name: "" };
+  const team = fifaTeams.find((t) => t.fifa_code === fifaCode);
+  return { flag: team?.flag_icon || "", name: team?.name || "" };
 };
 
 const pickBestFromPool = (pool, count, used) => {

@@ -37,7 +37,7 @@ const Nations = () => {
             <tbody>
               {ZODIAC_ORDER.map((z) => (
                 <tr key={z} style={{ cursor: 'pointer' }} onClick={() => setSelectedSing(z)}>
-                  <td style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <td style={{ fontFamily: "'Signika', sans-serif", fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <span style={{ color: `var(--${z.toLowerCase()})` }}>●</span>
                     <span>{z}</span>
                   </td>
@@ -77,7 +77,7 @@ const Nations = () => {
                 const zodiacs = getTeamZodiacs(team);
                 return (
                   <tr key={team.fifa_code} style={{ cursor: 'pointer' }} onClick={() => setSelectedTeam(team)}>
-                    <td style={{ fontFamily: "'Cinzel', serif", fontWeight: 600 }}>
+                    <td style={{ fontFamily: "'Signika', sans-serif", fontWeight: 600 }}>
                       <span style={{ color: `var(--${team.name.toLowerCase()})` }}>●</span>
                       <span style={{ marginLeft: '10px' }}>{team.name}</span>
                     </td>

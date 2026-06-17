@@ -87,16 +87,10 @@ Football should be represented through accents.
 
 ## Headers
 
-Elegant serif.
-
-Suggestions:
-
-* Cinzel
-* Cormorant Garamond
-* Marcellus
+Elegant sans-serif.
 
 ```css
-font-family: "Cinzel", serif;
+font-family: "Signika", sans-serif;
 ```
 
 Used for:
@@ -109,10 +103,10 @@ Used for:
 
 ## Body
 
-Modern sans-serif.
+Clean sans-serif.
 
 ```css
-font-family: "Inter", sans-serif;
+font-family: "Signika", sans-serif;
 ```
 
 Used for:

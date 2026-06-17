@@ -1,100 +1,148 @@
-import { rating2goals } from '../logic/rating2goals';
-import { getBest11, getFantaRating } from '../logic/getBest11';
-import zodiacTeams from '../../data/updatedZTeams.json' with { type: 'json' };
+import "./Match.css";
+
+import { rating2goals } from "../logic/rating2goals";
+import { getBest11, getFantaRating, getShortName, getFlagFromFifaCode } from "../logic/getBest11";
+import zodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
 
 const Match = ({ selectedMatch, setTab }) => {
-  const homeTeam = zodiacTeams.find(team => team.name === selectedMatch.home_team);
-  const awayTeam = zodiacTeams.find(team => team.name === selectedMatch.away_team);
+  const homeTeam = zodiacTeams.find(
+    (team) => team.name === selectedMatch.home_team,
+  );
+
+  const awayTeam = zodiacTeams.find(
+    (team) => team.name === selectedMatch.away_team,
+  );
+
   const home11 = getBest11(homeTeam);
   const away11 = getBest11(awayTeam);
 
-  const renderRating = (p) => {
-    const goals = Number(p?.matches?.day1?.stats?.goals ?? 0);
-    const assists = Number(p?.matches?.day1?.stats?.assists ?? 0);
+  const renderPlayer = (player, team) => {
+    const { flag } = getFlagFromFifaCode(player.fifa_code);
     return (
-      <span style={{ color: 'var(--gold-light)', fontWeight: 600 }}>
-        {'⚽'.repeat(goals)}
-        {'½'.repeat(assists)}
-        {' '}
-        <span style={{ color: 'var(--text-secondary)' }}>({getFantaRating(p)})</span>
-      </span>
+      <div key={player.id || player.name} className="player-star">
+        <div className="player-name">{getShortName(player.name).toUpperCase()}</div>
+        <div
+          className="player-core"
+          style={{
+            background: `var(--${team?.name.toLowerCase()})`,
+            boxShadow: `
+              0 0 .5rem var(--${team?.name.toLowerCase()}),
+              0 0 1rem var(--${team?.name.toLowerCase()}-glow)
+            `,
+          }}
+        />
+        <div className="player-rating">{getFantaRating(player)}</div>
+        <div className="player-info">
+          <span className="player-shirt">{player.number}</span>
+          <span className="player-flag">{flag}</span>
+        </div>
+      </div>
     );
   };
-
-  const renderSquad = (squad, label, signColor) => (
-    <div className="zw-card" style={{ padding: '20px', marginBottom: '16px', borderLeftColor: signColor }}>
-      <h3 style={{ fontFamily: "'Cinzel', serif", color: 'var(--gold)', marginBottom: '14px', fontSize: '16px', letterSpacing: '0.12em' }}>
-        {label}
-      </h3>
-      {['GK', 'DF', 'MF', 'FW'].map((pos) => {
-        const players = squad.filter((p) => p.pos === pos);
-        if (!players.length) return null;
-        return (
-          <div key={pos} style={{ marginBottom: '14px' }}>
-            <div style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', color: 'var(--text-secondary)', textTransform: 'uppercase', marginBottom: '6px' }}>
-              {pos}
-            </div>
-            <div style={{ display: 'grid', gap: '6px' }}>
-              {players.map((p, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '8px 10px',
-                    borderRadius: '8px',
-                    background: 'rgba(255, 255, 255, .03)',
-                    transition: 'background 400ms ease',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,.06)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,.03)')}
-                >
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '12px', width: '22px', textAlign: 'right' }}>{p.number}.</span>
-                  <span style={{ flex: 1, fontSize: '13px' }}>{p.name}</span>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>[{p.fifa_code}]</span>
-                  <span style={{ marginLeft: 'auto', fontSize: '13px' }}>{renderRating(p)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-      <div className="zw-divider" />
-      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-        <span style={{ color: 'var(--text-secondary)' }}>Total:</span>
-        <span style={{ fontWeight: 600 }}>{squad.reduce((sum, p) => sum + getFantaRating(p), 0)}</span>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginTop: '6px' }}>
-        <span style={{ color: 'var(--text-secondary)' }}>Goals:</span>
-        <span style={{ fontWeight: 600, color: 'var(--gold)' }}>{rating2goals(squad.reduce((sum, p) => sum + getFantaRating(p), 0))}</span>
-      </div>
-    </div>
-  );
-
-  if (selectedMatch.status === 'scheduled') {
+  if (selectedMatch.status === "scheduled") {
     return (
       <div className="zw-section">
-        <div className="zw-card" style={{ padding: '32px', textAlign: 'center', maxWidth: '520px', margin: '0 auto' }}>
-          <h2 style={{ color: 'var(--gold)', marginBottom: '16px' }}>Match Scheduled</h2>
-          <p style={{ fontSize: '15px', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+        <div className="zw-card">
+          <h2>Match Scheduled</h2>
+          <p>
             {selectedMatch.home_team} vs {selectedMatch.away_team}
           </p>
-          <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '24px' }}>Date: {selectedMatch.date}</p>
-          <button onClick={() => setTab('league')} className="zw-btn">Back to League</button>
         </div>
       </div>
     );
   }
 
+  const homeGoals = rating2goals(
+    home11.reduce((sum, p) => sum + getFantaRating(p), 0),
+  );
+
+  const awayGoals = rating2goals(
+    away11.reduce((sum, p) => sum + getFantaRating(p), 0),
+  );
+
   return (
-    <div className="zw-section">
-      <div style={{ display: 'grid', gap: '16px' }}>
-        {renderSquad(home11, `${homeTeam?.symbol} ${homeTeam?.name}`, `var(--${homeTeam?.name.toLowerCase()})`)}
-        {renderSquad(away11, `${awayTeam?.symbol} ${awayTeam?.name}`, `var(--${awayTeam?.name.toLowerCase()})`)}
+    <div className="match-page">
+      <div className="match-header">
+        <div className="team-side">
+          <div className="team-symbol">
+            <span
+              className="zw-symbol"
+              style={{
+                color: `var(--${homeTeam?.name.toLowerCase()})`,
+                textShadow: `0 0 10px var(--${homeTeam?.name.toLowerCase()}-glow)`,
+              }}
+            >
+              {homeTeam?.symbol}
+            </span>
+          </div>
+
+          <div className="team-name">{homeTeam?.name}</div>
+        </div>
+
+        <div className="score-board">
+          <span>{homeGoals}</span>
+          <span className="score-separator">:</span>
+          <span>{awayGoals}</span>
+        </div>
+
+        <div className="team-side">
+          <div className="team-symbol">
+            <span
+              className="zw-symbol"
+              style={{
+                color: `var(--${awayTeam?.name.toLowerCase()})`,
+                textShadow: `0 0 10px var(--${awayTeam?.name.toLowerCase()}-glow)`,
+              }}
+            >
+              {awayTeam?.symbol}
+            </span>
+          </div>
+
+          <div className="team-name">{awayTeam?.name}</div>
+        </div>
       </div>
-      <div style={{ textAlign: 'center', marginTop: '8px' }}>
-        <button onClick={() => setTab('league')} className="zw-btn">Back to League</button>
+
+      <div className="astral-pitch">
+        <div className="field-row away-gk">
+          {away11.filter((p) => p.pos === "GK").map((p) => renderPlayer(p, awayTeam))}
+        </div>
+
+        <div className="field-row away-df">
+          {away11.filter((p) => p.pos === "DF").map((p) => renderPlayer(p, awayTeam))}
+        </div>
+
+        <div className="field-row away-mf">
+          {away11.filter((p) => p.pos === "MF").map((p) => renderPlayer(p, awayTeam))}
+        </div>
+
+        <div className="field-row away-fw">
+          {away11.filter((p) => p.pos === "FW").map((p) => renderPlayer(p, awayTeam))}
+        </div>
+
+        <div className="field-midline">
+          <div className="center-circle" />
+        </div>
+
+        <div className="field-row home-fw">
+          {home11.filter((p) => p.pos === "FW").map((p) => renderPlayer(p, homeTeam))}
+        </div>
+
+        <div className="field-row home-mf">
+          {home11.filter((p) => p.pos === "MF").map((p) => renderPlayer(p, homeTeam))}
+        </div>
+
+        <div className="field-row home-df">
+          {home11.filter((p) => p.pos === "DF").map((p) => renderPlayer(p, homeTeam))}
+        </div>
+
+        <div className="field-row home-gk">
+          {home11.filter((p) => p.pos === "GK").map((p) => renderPlayer(p, homeTeam))}
+        </div>
+      </div>
+      <div className="back-row">
+        <button className="zw-btn" onClick={() => setTab("league")}>
+          Back
+        </button>
       </div>
     </div>
   );

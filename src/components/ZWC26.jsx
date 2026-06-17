@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import zodiacTeams from '../../data/updatedZTeams.json';
+import { getFlagFromFifaCode } from '../logic/getBest11';
 
 const ZWC26 = () => {
   const zTeams = zodiacTeams;
@@ -31,7 +32,9 @@ const ZWC26 = () => {
                   {pos}
                 </div>
                 <ul style={{ display: 'grid', gap: '4px', listStyle: 'none', padding: 0, margin: 0 }}>
-                  {players.map((player, index) => (
+                  {players.map((player, index) => {
+                    const { flag, name } = getFlagFromFifaCode(player.fifa_code);
+                    return (
                     <li
                       key={index}
                       style={{
@@ -46,9 +49,10 @@ const ZWC26 = () => {
                     >
                       <span style={{ color: 'var(--text-secondary)', fontSize: '12px', width: '22px', textAlign: 'right' }}>{player.number}.</span>
                       <span style={{ flex: 1 }}>{player.name}</span>
-                      <span style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>[{player.fifa_code}]</span>
+                      <span style={{ cursor: 'pointer' }} title={name}>{flag}</span>
                     </li>
-                  ))}
+                    )
+                  })}
                 </ul>
               </div>
             );

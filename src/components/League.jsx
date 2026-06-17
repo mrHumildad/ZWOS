@@ -1,30 +1,29 @@
-import { useState, useMemo } from 'react';
-import zodiacMatches from '../../data/matches.json';
-import zodiacTeams from '../../data/updatedZTeams.json' with { type: 'json' };
+import { useState, useMemo } from "react";
+import zodiacMatches from "../../data/matches.json";
+import zodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
 const GROUPS = [
   {
-    name: 'Cardinal',
-    teams: ['Aries', 'Cancer', 'Libra', 'Capricorn'],
+    name: "Cardinal",
+    teams: ["Aries", "Cancer", "Libra", "Capricorn"],
   },
   {
-    name: 'Fixed',
-    teams: ['Taurus', 'Leo', 'Scorpio', 'Aquarius'],
+    name: "Fixed",
+    teams: ["Taurus", "Leo", "Scorpio", "Aquarius"],
   },
   {
-    name: 'Mutable',
-    teams: ['Gemini', 'Virgo', 'Sagittarius', 'Pisces'],
+    name: "Mutable",
+    teams: ["Gemini", "Virgo", "Sagittarius", "Pisces"],
   },
 ];
 
 export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
-  
   const schools = zodiacTeams;
   const [groupIndex, setGroupIndex] = useState(0);
 
   const group = GROUPS[groupIndex];
   const allMatches = useMemo(
     () => Object.values(zodiacMatches).flatMap((day) => day.matches),
-    []
+    [],
   );
 
   const groupMatches = useMemo(
@@ -32,9 +31,9 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
       allMatches.filter(
         (m) =>
           group.teams.includes(m.home_team) &&
-          group.teams.includes(m.away_team)
+          group.teams.includes(m.away_team),
       ),
-    [allMatches, group.teams]
+    [allMatches, group.teams],
   );
 
   const standings = useMemo(() => {
@@ -79,8 +78,17 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
       }
     }
     return group.teams
-      .map((name) => ({ name, symbol: zodiacTeams.find((t) => t.name === name)?.symbol, ...stats[name] }))
-      .sort((a, b) => b.points - a.points || b.goalDiff - a.goalDiff || b.goalsFor - a.goalsFor);
+      .map((name) => ({
+        name,
+        symbol: zodiacTeams.find((t) => t.name === name)?.symbol,
+        ...stats[name],
+      }))
+      .sort(
+        (a, b) =>
+          b.points - a.points ||
+          b.goalDiff - a.goalDiff ||
+          b.goalsFor - a.goalsFor,
+      );
   }, [groupMatches, group.teams]);
 
   const handleNextGroup = () => {
@@ -92,22 +100,42 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
   };
 
   const getPositionBadgeClass = (position) => {
-    if (position === 0) return 'zw-badge zw-badge-gold';
-    if (position === 1) return 'zw-badge zw-badge-silver';
-    if (position === 2) return 'zw-badge zw-badge-bronze';
-    return 'zw-badge';
+    if (position === 0) return "zw-badge zw-badge-gold";
+    if (position === 1) return "zw-badge zw-badge-silver";
+    if (position === 2) return "zw-badge zw-badge-bronze";
+    return "zw-badge";
   };
 
   return (
     <div className="zw-section">
-      <div className="zw-card zw-card-gold" style={{ padding: '28px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-          <button onClick={handlePrevGroup} className="zw-btn">← Previous Group</button>
-          <h2 style={{ textAlign: 'center', fontSize: '24px', color: 'var(--gold)' }}>{group.name} Group</h2>
-          <button onClick={handleNextGroup} className="zw-btn">Next Group →</button>
+      <div className="zw-card zw-card-gold" style={{ padding: "28px" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: "16px",
+            flexWrap: "wrap",
+          }}
+        >
+          <button onClick={handlePrevGroup} className="zw-btn">
+            ← Previous Group
+          </button>
+          <h2
+            style={{
+              textAlign: "center",
+              fontSize: "24px",
+              color: "var(--gold)",
+            }}
+          >
+            {group.name} Group
+          </h2>
+          <button onClick={handleNextGroup} className="zw-btn">
+            Next Group →
+          </button>
         </div>
 
-        <div style={{ overflowX: 'auto' }}>
+        <div style={{ overflowX: "auto" }}>
           <table className="zw-table">
             <thead>
               <tr>
@@ -128,13 +156,28 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
                 const fullTeam = schools.find((s) => s.name === team.name);
                 const badgeClass = getPositionBadgeClass(index);
                 return (
-                  <tr key={team.name} className="clickable" onClick={() => { setSelectedTeam(fullTeam); setTab('roster'); }}>
+                  <tr
+                    key={team.name}
+                    className="clickable"
+                    onClick={() => {
+                      setSelectedTeam(fullTeam);
+                      setTab("roster");
+                    }}
+                  >
                     <td>
                       <span className={badgeClass}>{index + 1}</span>
                     </td>
                     <td>
-                      <span style={{ color: `var(--${team.name.toLowerCase()})` }}>{team.symbol}</span>
-                      <span style={{ marginLeft: '10px' }}>{team.name}</span>
+                      <span
+                        className="zw-symbol"
+                        style={{
+                          color: `var(--${team.name.toLowerCase()})`,
+                          textShadow: `0 0 10px var(--${team.name.toLowerCase()}-glow)`,
+                        }}
+                      >
+                        {team.symbol}
+                      </span>
+                      <span style={{ marginLeft: "10px" }}>{team.name}</span>
                     </td>
                     <td>{team.played}</td>
                     <td>{team.wins}</td>
@@ -143,7 +186,9 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
                     <td>{team.goalsFor}</td>
                     <td>{team.goalsAgainst}</td>
                     <td>{team.goalDiff}</td>
-                    <td style={{ color: 'var(--gold)', fontWeight: 600 }}>{team.points}</td>
+                    <td style={{ color: "var(--gold)", fontWeight: 600 }}>
+                      {team.points}
+                    </td>
                   </tr>
                 );
               })}
@@ -151,24 +196,66 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
           </table>
         </div>
 
-        <h3 style={{ margin: '24px 0 12px', color: 'var(--gold)' }}>Matches</h3>
-        <div style={{ display: 'grid', gap: '10px' }}>
+        <h3 style={{ margin: "24px 0 12px", color: "var(--gold)" }}>Matches</h3>
+        <div style={{ display: "grid", gap: "10px" }}>
           {groupMatches.map((match, index) => (
             <div
               key={index}
               className="zw-card"
-              style={{ padding: '14px 18px', cursor: 'pointer' }}
-              onClick={() => { setSelectedMatch(match); setTab('match'); }}
+              style={{ padding: "14px 18px", cursor: "pointer" }}
+              onClick={() => {
+                setSelectedMatch(match);
+                setTab("match");
+              }}
             >
-              <span style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>
-                {zodiacTeams.find((t) => t.name === match.home_team)?.symbol ?? ''} {match.home_team}
+              <span
+                style={{ color: "var(--text-secondary)", fontSize: "13px" }}
+              >
+                <span
+                  className="zw-symbol"
+                  style={{
+                    color: `var(--${zodiacTeams.find((t) => t.name === match.home_team)?.name.toLowerCase()})`,
+                    textShadow: `0 0 10px var(--${zodiacTeams.find((t) => t.name === match.home_team)?.name.toLowerCase()}-glow)`,
+                  }}
+                >
+                  {zodiacTeams.find((t) => t.name === match.home_team)
+                    ?.symbol ?? ""}
+                </span>{" "}
+                {match.home_team}
               </span>
-              <span style={{ color: 'var(--gold)', fontWeight: 600, margin: '0 10px' }}>vs</span>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>
-                {zodiacTeams.find((t) => t.name === match.away_team)?.symbol ?? ''} {match.away_team}
+              <span
+                style={{
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                  margin: "0 10px",
+                }}
+              >
+                vs
               </span>
-              <span style={{ marginLeft: 'auto', color: 'var(--gold-light)', fontWeight: 600, fontSize: '14px' }}>
-                {match.home_score ?? '-'} - {match.away_score ?? '-'}
+              <span
+                style={{ color: "var(--text-secondary)", fontSize: "13px" }}
+              >
+                <span
+                  className="zw-symbol"
+                  style={{
+                    color: `var(--${zodiacTeams.find((t) => t.name === match.away_team)?.name.toLowerCase()})`,
+                    textShadow: `0 0 10px var(--${zodiacTeams.find((t) => t.name === match.away_team)?.name.toLowerCase()}-glow)`,
+                  }}
+                >
+                  {zodiacTeams.find((t) => t.name === match.away_team)
+                    ?.symbol ?? ""}
+                </span>{" "}
+                {match.away_team}
+              </span>
+              <span
+                style={{
+                  marginLeft: "auto",
+                  color: "var(--gold-light)",
+                  fontWeight: 600,
+                  fontSize: "14px",
+                }}
+              >
+                {match.home_score ?? "-"} - {match.away_score ?? "-"}
               </span>
             </div>
           ))}

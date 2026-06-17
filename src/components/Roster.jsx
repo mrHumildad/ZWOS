@@ -1,4 +1,4 @@
-import React from 'react';
+import { getFlagFromFifaCode } from '../logic/getBest11';
 
 const Roster = ({ selectedTeam, setTab }) => {
   if (!selectedTeam) return <div className="zw-section">Select a team</div>;
@@ -22,7 +22,9 @@ const Roster = ({ selectedTeam, setTab }) => {
       </div>
       <div className="zw-card" style={{ padding: '10px 12px', borderLeftColor: signColor }}>
         <div style={{ display: 'grid', gap: '4px' }}>
-          {players.map((player, index) => (
+          {players.map((player, index) => {
+            const { flag, name } = getFlagFromFifaCode(player.fifa_code);
+            return (
             <div
               key={index}
               style={{
@@ -36,14 +38,14 @@ const Roster = ({ selectedTeam, setTab }) => {
             >
               <span style={{ color: 'var(--text-secondary)', fontSize: '12px', width: '22px', textAlign: 'right' }}>{player.number}.</span>
               <span style={{ flex: 1, fontSize: '13px' }}>{player.name}</span>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '11px' }}>[{player.fifa_code}]</span>
+              <span style={{ cursor: 'pointer' }} title={name}>{flag}</span>
               {player.matches?.day1?.overallRating && (
                 <span style={{ marginLeft: 'auto', color: 'var(--gold-light)', fontWeight: 600, fontSize: '13px' }}>
                   {player.matches.day1.overallRating}
                 </span>
               )}
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </div>
