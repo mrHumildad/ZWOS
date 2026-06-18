@@ -1,10 +1,13 @@
+import { useMemo } from "react";
 import "./Match.css";
 
 import { rating2goals } from "../logic/rating2goals";
 import { getBest11, getFantaRating, getShortName, getFlagFromFifaCode } from "../logic/getBest11";
-import zodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
+import rawZodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
 
 const Match = ({ selectedMatch, setTab }) => {
+  const zodiacTeams = useMemo(() => Array.isArray(rawZodiacTeams) ? rawZodiacTeams : Object.values(rawZodiacTeams), [rawZodiacTeams]);
+
   const homeTeam = zodiacTeams.find(
     (team) => team.name === selectedMatch.home_team,
   );

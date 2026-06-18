@@ -17,7 +17,7 @@ const GROUPS = [
 ];
 
 export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
-  const schools = zodiacTeams;
+  const schools = useMemo(() => Array.isArray(zodiacTeams) ? zodiacTeams : Object.values(zodiacTeams), [zodiacTeams]);
   const [groupIndex, setGroupIndex] = useState(0);
 
   const group = GROUPS[groupIndex];
@@ -80,7 +80,7 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
     return group.teams
       .map((name) => ({
         name,
-        symbol: zodiacTeams.find((t) => t.name === name)?.symbol,
+        symbol: schools.find((t) => t.name === name)?.symbol,
         ...stats[name],
       }))
       .sort(
@@ -89,7 +89,7 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
           b.goalDiff - a.goalDiff ||
           b.goalsFor - a.goalsFor,
       );
-  }, [groupMatches, group.teams]);
+  }, [groupMatches, group.teams, schools]);
 
   const handleNextGroup = () => {
     setGroupIndex((prev) => (prev + 1) % GROUPS.length);
@@ -214,11 +214,11 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
                 <span
                   className="zw-symbol"
                   style={{
-                    color: `var(--${zodiacTeams.find((t) => t.name === match.home_team)?.name.toLowerCase()})`,
-                    textShadow: `0 0 10px var(--${zodiacTeams.find((t) => t.name === match.home_team)?.name.toLowerCase()}-glow)`,
+                     color: `var(--${schools.find((t) => t.name === match.home_team)?.name.toLowerCase()})`,
+                    textShadow: `0 0 10px var(--${schools.find((t) => t.name === match.home_team)?.name.toLowerCase()}-glow)`,
                   }}
                 >
-                  {zodiacTeams.find((t) => t.name === match.home_team)
+                  {schools.find((t) => t.name === match.home_team)
                     ?.symbol ?? ""}
                 </span>{" "}
                 {match.home_team}
@@ -238,11 +238,11 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
                 <span
                   className="zw-symbol"
                   style={{
-                    color: `var(--${zodiacTeams.find((t) => t.name === match.away_team)?.name.toLowerCase()})`,
-                    textShadow: `0 0 10px var(--${zodiacTeams.find((t) => t.name === match.away_team)?.name.toLowerCase()}-glow)`,
+                     color: `var(--${schools.find((t) => t.name === match.away_team)?.name.toLowerCase()})`,
+                    textShadow: `0 0 10px var(--${schools.find((t) => t.name === match.away_team)?.name.toLowerCase()}-glow)`,
                   }}
                 >
-                  {zodiacTeams.find((t) => t.name === match.away_team)
+                  {schools.find((t) => t.name === match.away_team)
                     ?.symbol ?? ""}
                 </span>{" "}
                 {match.away_team}

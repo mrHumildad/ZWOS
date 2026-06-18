@@ -444,7 +444,7 @@ async function save(payload) {
     })
   }
 
-  const output =  'matchStats.json'
+  const output = path.join(dataDir, 'matchStats.json')
   
 
   fs.writeFileSync(
