@@ -43,6 +43,22 @@
   opacity: .5;
 }
 
+.match-ratings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: -12px;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.rating-separator {
+  opacity: .5;
+}
+
 .astral-pitch{
   display:flex;
   flex-direction:column;
@@ -67,6 +83,29 @@
 
   position:relative;
 }
+
+.home-zodiac-bg{
+  position:absolute;
+  bottom:5%;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:.06;
+  pointer-events:none;
+  z-index:0;
+  color:var(--home-sign-color, var(--cosmic-blue));
+}
+
+.away-zodiac-bg{
+  position:absolute;
+  top:5%;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:.06;
+  pointer-events:none;
+  z-index:0;
+  color:var(--away-sign-color, var(--cosmic-blue));
+}
+
 .field-row{
   flex:1;
 
@@ -75,6 +114,9 @@
   align-items:center;
 
   padding-inline:3vw;
+
+  position:relative;
+  z-index:1;
 }
 .astral-pitch::before{
 

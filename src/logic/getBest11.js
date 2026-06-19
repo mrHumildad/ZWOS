@@ -13,8 +13,8 @@ const defaultPlayer = {
   overallRating: 4,
 };
 
-export const getFantaRating = (p) => {
-  const day = p.matches?.day1;
+export const getFantaRating = (p, dayN) => {
+  const day = p.matches?.[dayN];
   if (day?.overallRating != null) {
     return Number(day.overallRating) + Number(day.stats?.goals ?? 0) * 3 + Number(day.stats?.assists ?? 0) * 2;
   }
@@ -33,8 +33,8 @@ export const getFlagFromFifaCode = (fifaCode) => {
   return { flag: team?.flag_icon || "", name: team?.name || "" };
 };
 
-const pickBestFromPool = (pool, count, used) => {
-  const sorted = [...pool].sort((a, b) => getFantaRating(b) - getFantaRating(a));
+const pickBestFromPool = (pool, count, used, dayN) => {
+  const sorted = [...pool].sort((a, b) => getFantaRating(b, dayN) - getFantaRating(a, dayN));
   const selected = [];
   for (const p of sorted) {
     if (selected.length >= count) break;
@@ -46,7 +46,7 @@ const pickBestFromPool = (pool, count, used) => {
   return selected;
 };
 
-export const getBest11 = (team) => {
+export const getBest11 = (team, dayN) => {
   if (!team || !team.players) return [];
 
   const pools = { GK: [], DF: [], MF: [], FW: [] };
@@ -61,7 +61,7 @@ export const getBest11 = (team) => {
 
   for (const pos of ["GK", "DF", "MF", "FW"]) {
     const { min } = squadRestrictions[pos];
-    const picked = pickBestFromPool(pools[pos], min, used);
+    const picked = pickBestFromPool(pools[pos], min, used, dayN);
     selected.push(...picked);
     counts[pos] = picked.length;
   }
@@ -79,7 +79,7 @@ export const getBest11 = (team) => {
       }
     }
     if (!candidates.length) break;
-    candidates.sort((a, b) => getFantaRating(b) - getFantaRating(a));
+    candidates.sort((a, b) => getFantaRating(b, dayN) - getFantaRating(a, dayN));
     const best = candidates[0];
     selected.push(best);
     used.add(best.id);
@@ -96,5 +96,5 @@ export const getBest11 = (team) => {
     counts[pos]++;
   }
 
-  return selected.sort((a, b) => (getFantaRating(b) ?? 0) - (getFantaRating(a) ?? 0));
+  return selected.sort((a, b) => (getFantaRating(b, dayN) ?? 0) - (getFantaRating(a, dayN) ?? 0));
 };

@@ -334,6 +334,29 @@ table {
   color: var(--text-secondary);
 }
 
+.zw-zodiac-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.zw-zodiac-icon svg {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.zw-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.zw-symbol .zw-zodiac-icon svg {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
 .zw-glow {
   animation: cosmicPulse 3.5s ease-in-out infinite;
 }

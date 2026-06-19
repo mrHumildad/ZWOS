@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import zodiacMatches from "../../data/matches.json";
 import zodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
+import ZodiacIcon from "./ZodiacIcon";
 const GROUPS = [
   {
     name: "Cardinal",
@@ -51,9 +52,11 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
       };
     }
     for (const m of groupMatches) {
-      if (m.home_score == null || m.away_score == null) continue;
-      const home = m.home_score;
-      const away = m.away_score;
+      const isCompleted = m.status === "completed";
+      if (!isCompleted) continue;
+      console.log(m);
+      const home = m.home_goals ?? m.home_score ?? 0;
+      const away = m.away_goals ?? m.away_score ?? 0;
       stats[m.home_team].played += 1;
       stats[m.away_team].played += 1;
       stats[m.home_team].goalsFor += home;
@@ -167,18 +170,18 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
                     <td>
                       <span className={badgeClass}>{index + 1}</span>
                     </td>
-                    <td>
-                      <span
-                        className="zw-symbol"
-                        style={{
-                          color: `var(--${team.name.toLowerCase()})`,
-                          textShadow: `0 0 10px var(--${team.name.toLowerCase()}-glow)`,
-                        }}
-                      >
-                        {team.symbol}
-                      </span>
-                      <span style={{ marginLeft: "10px" }}>{team.name}</span>
-                    </td>
+                     <td>
+                       <span
+                         className="zw-symbol"
+                         style={{
+                           color: `var(--${team.name.toLowerCase()})`,
+                           textShadow: `0 0 10px var(--${team.name.toLowerCase()}-glow)`,
+                         }}
+                       >
+                         <ZodiacIcon sign={team.name} size={22} />
+                       </span>
+                       <span style={{ marginLeft: "10px" }}>{team.name}</span>
+                     </td>
                     <td>{team.played}</td>
                     <td>{team.wins}</td>
                     <td>{team.draws}</td>
@@ -201,28 +204,27 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
           {groupMatches.map((match, index) => (
             <div
               key={index}
-              className="zw-card"
+              className={`zw-card ${match.status === "ongoing" ? "zw-card-blue" : "zw-card-gold"}`}
               style={{ padding: "14px 18px", cursor: "pointer" }}
               onClick={() => {
                 setSelectedMatch(match);
                 setTab("match");
               }}
             >
-              <span
-                style={{ color: "var(--text-secondary)", fontSize: "13px" }}
-              >
-                <span
-                  className="zw-symbol"
-                  style={{
+               <span
+                 style={{ color: "var(--text-secondary)", fontSize: "13px" }}
+               >
+                 <span
+                   className="zw-symbol"
+                   style={{
                      color: `var(--${schools.find((t) => t.name === match.home_team)?.name.toLowerCase()})`,
-                    textShadow: `0 0 10px var(--${schools.find((t) => t.name === match.home_team)?.name.toLowerCase()}-glow)`,
-                  }}
-                >
-                  {schools.find((t) => t.name === match.home_team)
-                    ?.symbol ?? ""}
-                </span>{" "}
-                {match.home_team}
-              </span>
+                     textShadow: `0 0 10px var(--${schools.find((t) => t.name === match.home_team)?.name.toLowerCase()}-glow)`,
+                   }}
+                 >
+                   <ZodiacIcon sign={match.home_team} size={18} />
+                 </span>{" "}
+                 {match.home_team}
+               </span>
               <span
                 style={{
                   color: "var(--gold)",
@@ -232,21 +234,20 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
               >
                 vs
               </span>
-              <span
-                style={{ color: "var(--text-secondary)", fontSize: "13px" }}
-              >
-                <span
-                  className="zw-symbol"
-                  style={{
-                     color: `var(--${schools.find((t) => t.name === match.away_team)?.name.toLowerCase()})`,
-                    textShadow: `0 0 10px var(--${schools.find((t) => t.name === match.away_team)?.name.toLowerCase()}-glow)`,
-                  }}
-                >
-                  {schools.find((t) => t.name === match.away_team)
-                    ?.symbol ?? ""}
-                </span>{" "}
-                {match.away_team}
-              </span>
+               <span
+                 style={{ color: "var(--text-secondary)", fontSize: "13px" }}
+               >
+                 <span
+                   className="zw-symbol"
+                   style={{
+                      color: `var(--${schools.find((t) => t.name === match.away_team)?.name.toLowerCase()})`,
+                     textShadow: `0 0 10px var(--${schools.find((t) => t.name === match.away_team)?.name.toLowerCase()}-glow)`,
+                   }}
+                 >
+                   <ZodiacIcon sign={match.away_team} size={18} />
+                 </span>{" "}
+                 {match.away_team}
+               </span>
               <span
                 style={{
                   marginLeft: "auto",
@@ -255,7 +256,11 @@ export default function League({ setSelectedTeam, setSelectedMatch, setTab }) {
                   fontSize: "14px",
                 }}
               >
-                {match.home_score ?? "-"} - {match.away_score ?? "-"}
+                {match.status === "ongoing" ? (
+                  <span style={{ color: "var(--cosmic-blue)", fontWeight: 700 }}>LIVE</span>
+                ) : (
+                  `${match.home_goals ?? match.home_score ?? "-"} - ${match.away_goals ?? match.away_score ?? "-"}`
+                )}
               </span>
             </div>
           ))}

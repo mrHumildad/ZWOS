@@ -2,8 +2,10 @@ import { useMemo } from "react";
 import "./Match.css";
 
 import { rating2goals } from "../logic/rating2goals";
-import { getBest11, getFantaRating, getShortName, getFlagFromFifaCode } from "../logic/getBest11";
+import { getBest11, getFantaRating } from "../logic/getBest11";
 import rawZodiacTeams from "../../data/updatedZTeams.json" with { type: "json" };
+import ZodiacIcon from "./ZodiacIcon";
+import Player from "./Player";
 
 const Match = ({ selectedMatch, setTab }) => {
   const zodiacTeams = useMemo(() => Array.isArray(rawZodiacTeams) ? rawZodiacTeams : Object.values(rawZodiacTeams), [rawZodiacTeams]);
@@ -16,32 +18,10 @@ const Match = ({ selectedMatch, setTab }) => {
     (team) => team.name === selectedMatch.away_team,
   );
 
-  const home11 = getBest11(homeTeam);
-  const away11 = getBest11(awayTeam);
+  const home11 = getBest11(homeTeam, selectedMatch.turn);
+  const away11 = getBest11(awayTeam, selectedMatch.turn);
 
-  const renderPlayer = (player, team) => {
-    const { flag } = getFlagFromFifaCode(player.fifa_code);
-    return (
-      <div key={player.id || player.name} className="player-star">
-        <div className="player-name">{getShortName(player.name).toUpperCase()}</div>
-        <div
-          className="player-core"
-          style={{
-            background: `var(--${team?.name.toLowerCase()})`,
-            boxShadow: `
-              0 0 .5rem var(--${team?.name.toLowerCase()}),
-              0 0 1rem var(--${team?.name.toLowerCase()}-glow)
-            `,
-          }}
-        />
-        <div className="player-rating">{getFantaRating(player)}</div>
-        <div className="player-info">
-          <span className="player-shirt">{player.number}</span>
-          <span className="player-flag">{flag}</span>
-        </div>
-      </div>
-    );
-  };
+
   if (selectedMatch.status === "scheduled") {
     return (
       <div className="zw-section">
@@ -55,13 +35,29 @@ const Match = ({ selectedMatch, setTab }) => {
     );
   }
 
+  if (selectedMatch.status === "ongoing") {
+    return (
+      <div className="zw-section">
+        <div className="zw-card zw-card-blue">
+          <h2 style={{ color: "var(--cosmic-blue)" }}>LIVE</h2>
+          <p>
+            {selectedMatch.home_team} vs {selectedMatch.away_team}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   const homeGoals = rating2goals(
-    home11.reduce((sum, p) => sum + getFantaRating(p), 0),
+    home11.reduce((sum, p) => sum + getFantaRating(p, selectedMatch.turn), 0),
   );
 
   const awayGoals = rating2goals(
-    away11.reduce((sum, p) => sum + getFantaRating(p), 0),
+    away11.reduce((sum, p) => sum + getFantaRating(p, selectedMatch.turn), 0),
   );
+
+  const homeTotalRating = home11.reduce((sum, p) => sum + getFantaRating(p, selectedMatch.turn), 0);
+  const awayTotalRating = away11.reduce((sum, p) => sum + getFantaRating(p, selectedMatch.turn), 0);
 
   return (
     <div className="match-page">
@@ -75,7 +71,7 @@ const Match = ({ selectedMatch, setTab }) => {
                 textShadow: `0 0 10px var(--${homeTeam?.name.toLowerCase()}-glow)`,
               }}
             >
-              {homeTeam?.symbol}
+              <ZodiacIcon sign={homeTeam?.name} size={48} />
             </span>
           </div>
 
@@ -97,7 +93,7 @@ const Match = ({ selectedMatch, setTab }) => {
                 textShadow: `0 0 10px var(--${awayTeam?.name.toLowerCase()}-glow)`,
               }}
             >
-              {awayTeam?.symbol}
+              <ZodiacIcon sign={awayTeam?.name} size={48} />
             </span>
           </div>
 
@@ -105,21 +101,33 @@ const Match = ({ selectedMatch, setTab }) => {
         </div>
       </div>
 
-      <div className="astral-pitch">
+      <div className="match-ratings">
+        <span>({homeTotalRating.toFixed(1)})</span>
+        <span className="rating-separator">:</span>
+        <span>({awayTotalRating.toFixed(1)})</span>
+      </div>
+
+      <div className="astral-pitch" style={{"--home-sign-color": `var(--${homeTeam?.name.toLowerCase()})`, "--away-sign-color": `var(--${awayTeam?.name.toLowerCase()})`}}>
+        <div className="home-zodiac-bg">
+          <ZodiacIcon sign={homeTeam?.name} size={320} />
+        </div>
+        <div className="away-zodiac-bg">
+          <ZodiacIcon sign={awayTeam?.name} size={320} />
+        </div>
         <div className="field-row away-gk">
-          {away11.filter((p) => p.pos === "GK").map((p) => renderPlayer(p, awayTeam))}
+          {away11.filter((p) => p.pos === "GK").map((p) => <Player key={p.id || p.name} player={p} team={awayTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-row away-df">
-          {away11.filter((p) => p.pos === "DF").map((p) => renderPlayer(p, awayTeam))}
+          {away11.filter((p) => p.pos === "DF").map((p) => <Player key={p.id || p.name} player={p} team={awayTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-row away-mf">
-          {away11.filter((p) => p.pos === "MF").map((p) => renderPlayer(p, awayTeam))}
+          {away11.filter((p) => p.pos === "MF").map((p) => <Player key={p.id || p.name} player={p} team={awayTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-row away-fw">
-          {away11.filter((p) => p.pos === "FW").map((p) => renderPlayer(p, awayTeam))}
+          {away11.filter((p) => p.pos === "FW").map((p) => <Player key={p.id || p.name} player={p} team={awayTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-midline">
@@ -127,19 +135,19 @@ const Match = ({ selectedMatch, setTab }) => {
         </div>
 
         <div className="field-row home-fw">
-          {home11.filter((p) => p.pos === "FW").map((p) => renderPlayer(p, homeTeam))}
+          {home11.filter((p) => p.pos === "FW").map((p) => <Player key={p.id || p.name} player={p} team={homeTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-row home-mf">
-          {home11.filter((p) => p.pos === "MF").map((p) => renderPlayer(p, homeTeam))}
+          {home11.filter((p) => p.pos === "MF").map((p) => <Player key={p.id || p.name} player={p} team={homeTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-row home-df">
-          {home11.filter((p) => p.pos === "DF").map((p) => renderPlayer(p, homeTeam))}
+          {home11.filter((p) => p.pos === "DF").map((p) => <Player key={p.id || p.name} player={p} team={homeTeam} turn={selectedMatch.turn} />)}
         </div>
 
         <div className="field-row home-gk">
-          {home11.filter((p) => p.pos === "GK").map((p) => renderPlayer(p, homeTeam))}
+          {home11.filter((p) => p.pos === "GK").map((p) => <Player key={p.id || p.name} player={p} team={homeTeam} turn={selectedMatch.turn} />)}
         </div>
       </div>
       <div className="back-row">

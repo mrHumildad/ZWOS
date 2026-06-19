@@ -301,6 +301,25 @@
               "recoveries": 3,
               "duels_won": 11
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.1,
+            "stats": {
+              "minutes_played": 86,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.02,
+              "accurate_passes": 7,
+              "chances_created": 0,
+              "touches": 20,
+              "clearances": 1,
+              "interceptions": 0,
+              "recoveries": 3,
+              "duels_won": 2
+            }
           }
         },
         "zodiac": "Aries",
@@ -607,20 +626,63 @@
         "pos": "DF",
         "name": "Tomáš Holeš",
         "date_of_birth": "1993-03-31",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 26,
+              "chances_created": 0,
+              "touches": 42,
+              "clearances": 2,
+              "interceptions": 3,
+              "recoveries": 4,
+              "duels_won": 1
+            }
+          }
+        },
         "zodiac": "Aries",
         "fifa_code": "CZE",
-        "id": "CZE-3"
+        "id": "CZE-3",
+        "status": "played"
       },
       {
         "number": 12,
         "pos": "MF",
         "name": "Lukáš Červ",
         "date_of_birth": "2001-04-10",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7,
+            "stats": {
+              "minutes_played": 78,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.03,
+              "accurate_passes": 20,
+              "chances_created": 0,
+              "shots_on_target": 1,
+              "touches": 34,
+              "clearances": 3,
+              "interceptions": 0,
+              "recoveries": 2,
+              "duels_won": 4
+            }
+          }
+        },
         "zodiac": "Aries",
         "fifa_code": "CZE",
-        "id": "CZE-12"
+        "id": "CZE-12",
+        "status": "played"
       },
       {
         "number": 24,
@@ -644,6 +706,26 @@
               "clearances": 0,
               "interceptions": 2,
               "recoveries": 3,
+              "duels_won": 3
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.6,
+            "stats": {
+              "minutes_played": 55,
+              "goals": 0,
+              "assists": 1,
+              "expected_assists_xa": 0.09,
+              "accurate_passes": 20,
+              "chances_created": 1,
+              "big_chances_created": 1,
+              "touches": 38,
+              "clearances": 2,
+              "interceptions": 0,
+              "recoveries": 8,
               "duels_won": 3
             }
           }
@@ -1907,6 +1989,27 @@
               "recoveries": 2,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 7.3,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.02,
+              "expected_assists_xa": 0.27,
+              "accurate_passes": 71,
+              "chances_created": 1,
+              "shots_on_target": 0,
+              "touches": 85,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 2,
+              "duels_won": 4
+            }
           }
         },
         "zodiac": "Aries",
@@ -2707,6 +2810,23 @@
               "recoveries": 3,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.3,
+            "stats": {
+              "minutes_played": 27,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 12,
+              "chances_created": 1,
+              "touches": 16,
+              "clearances": 1,
+              "interceptions": 0,
+              "recoveries": 1
+            }
           }
         },
         "zodiac": "Taurus",
@@ -3212,6 +3332,21 @@
               "touches": 37,
               "interceptions": 0
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.7,
+            "stats": {
+              "minutes_played": 90,
+              "saves": 3,
+              "accurate_passes": 16,
+              "recoveries": 4,
+              "clearances": 0,
+              "touches": 31,
+              "interceptions": 0
+            }
           }
         },
         "zodiac": "Taurus",
@@ -3243,6 +3378,28 @@
               "interceptions": 0,
               "recoveries": 5,
               "duels_won": 7
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.8,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.25,
+              "expected_assists_xa": 0.06,
+              "accurate_passes": 45,
+              "chances_created": 2,
+              "big_chances_created": 1,
+              "shots_on_target": 0,
+              "touches": 72,
+              "clearances": 3,
+              "interceptions": 1,
+              "recoveries": 4,
+              "duels_won": 11
             }
           }
         },
@@ -4749,6 +4906,25 @@
               "recoveries": 4,
               "duels_won": 7
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.5,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.3,
+              "accurate_passes": 52,
+              "chances_created": 1,
+              "touches": 74,
+              "clearances": 2,
+              "interceptions": 2,
+              "recoveries": 6,
+              "duels_won": 4
+            }
           }
         },
         "zodiac": "Taurus",
@@ -4779,6 +4955,24 @@
               "interceptions": 0,
               "recoveries": 1,
               "duels_won": 1
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.4,
+            "stats": {
+              "minutes_played": 45,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 20,
+              "chances_created": 1,
+              "touches": 22,
+              "clearances": 1,
+              "interceptions": 1,
+              "recoveries": 1
             }
           }
         },
@@ -5474,6 +5668,25 @@
               "recoveries": 2,
               "duels_won": 5
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 5.7,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 40,
+              "chances_created": 0,
+              "touches": 67,
+              "clearances": 3,
+              "interceptions": 1,
+              "recoveries": 4,
+              "duels_won": 5
+            }
           }
         },
         "zodiac": "Gemini",
@@ -6085,6 +6298,27 @@
               "clearances": 0,
               "interceptions": 0,
               "recoveries": 0
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.5,
+            "stats": {
+              "minutes_played": 67,
+              "goals": 1,
+              "assists": 0,
+              "expected_goals_xg": 0.31,
+              "expected_assists_xa": 0.07,
+              "accurate_passes": 18,
+              "chances_created": 1,
+              "shots_on_target": 1,
+              "touches": 37,
+              "clearances": 1,
+              "interceptions": 1,
+              "recoveries": 3,
+              "duels_won": 2
             }
           }
         },
@@ -7376,6 +7610,27 @@
               "recoveries": 1,
               "duels_won": 3
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.7,
+            "stats": {
+              "minutes_played": 24,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.11,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 5,
+              "chances_created": 0,
+              "shots_on_target": 2,
+              "touches": 13,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 2,
+              "duels_won": 4
+            }
           }
         },
         "zodiac": "Gemini",
@@ -7562,10 +7817,31 @@
         "pos": "DF",
         "name": "Luca Jaquez",
         "date_of_birth": "2003-06-02",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": null,
+            "stats": {
+              "minutes_played": 4,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 7,
+              "chances_created": 0,
+              "touches": 10,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 1
+            }
+          }
+        },
         "zodiac": "Gemini",
         "fifa_code": "SUI",
-        "id": "SUI-25"
+        "id": "SUI-25",
+        "status": "played"
       },
       {
         "number": 15,
@@ -9636,7 +9912,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 6.4,
+            "overallRating": 6.6,
             "stats": {
               "minutes_played": 27,
               "goals": 0,
@@ -9644,7 +9920,7 @@
               "expected_assists_xa": 0.02,
               "accurate_passes": 11,
               "chances_created": 2,
-              "touches": 16,
+              "touches": 15,
               "clearances": 1,
               "interceptions": 1,
               "recoveries": 4
@@ -9802,6 +10078,27 @@
               "recoveries": 4,
               "duels_won": 5
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.9,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.13,
+              "expected_assists_xa": 0.11,
+              "accurate_passes": 45,
+              "chances_created": 2,
+              "shots_on_target": 0,
+              "touches": 81,
+              "clearances": 2,
+              "interceptions": 1,
+              "recoveries": 6,
+              "duels_won": 7
+            }
           }
         },
         "zodiac": "Cancer",
@@ -9814,10 +10111,30 @@
         "pos": "FW",
         "name": "Kamogelo Sebelebele",
         "date_of_birth": "2002-07-21",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": null,
+            "stats": {
+              "minutes_played": 6,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 4,
+              "chances_created": 0,
+              "touches": 10,
+              "clearances": 1,
+              "interceptions": 0,
+              "recoveries": 1,
+              "duels_won": 1
+            }
+          }
+        },
         "zodiac": "Cancer",
         "fifa_code": "RSA",
-        "id": "RSA-25"
+        "id": "RSA-25",
+        "status": "played"
       },
       {
         "number": 10,
@@ -9897,6 +10214,25 @@
               "interceptions": 0,
               "recoveries": 6,
               "duels_won": 3
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 8,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.03,
+              "accurate_passes": 80,
+              "chances_created": 1,
+              "touches": 97,
+              "clearances": 4,
+              "interceptions": 2,
+              "recoveries": 5,
+              "duels_won": 7
             }
           }
         },
@@ -10693,6 +11029,27 @@
               "recoveries": 2,
               "duels_won": 6
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.2,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.02,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 22,
+              "chances_created": 0,
+              "shots_on_target": 1,
+              "touches": 47,
+              "clearances": 3,
+              "interceptions": 1,
+              "recoveries": 9,
+              "duels_won": 6
+            }
           }
         },
         "zodiac": "Leo",
@@ -11149,6 +11506,26 @@
               "recoveries": 3,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.7,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.22,
+              "accurate_passes": 15,
+              "chances_created": 5,
+              "big_chances_created": 1,
+              "touches": 46,
+              "clearances": 2,
+              "interceptions": 1,
+              "recoveries": 4,
+              "duels_won": 3
+            }
           }
         },
         "zodiac": "Leo",
@@ -11161,10 +11538,32 @@
         "pos": "MF",
         "name": "Vladimír Darida",
         "date_of_birth": "1990-08-08",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7,
+            "stats": {
+              "minutes_played": 55,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.15,
+              "accurate_passes": 13,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 32,
+              "clearances": 2,
+              "interceptions": 1,
+              "recoveries": 5,
+              "duels_won": 4
+            }
+          }
+        },
         "zodiac": "Leo",
         "fifa_code": "CZE",
-        "id": "CZE-8"
+        "id": "CZE-8",
+        "status": "played"
       },
       {
         "number": 9,
@@ -11191,6 +11590,27 @@
               "interceptions": 0,
               "recoveries": 0,
               "duels_won": 1
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 5.7,
+            "stats": {
+              "minutes_played": 67,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.04,
+              "expected_assists_xa": 0.02,
+              "accurate_passes": 9,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 25,
+              "clearances": 0,
+              "interceptions": 1,
+              "recoveries": 0,
+              "duels_won": 2
             }
           }
         },
@@ -11232,6 +11652,27 @@
               "interceptions": 0,
               "recoveries": 6,
               "duels_won": 3
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.4,
+            "stats": {
+              "minutes_played": 35,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.01,
+              "expected_assists_xa": 0.05,
+              "accurate_passes": 7,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 20,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 2,
+              "duels_won": 2
             }
           }
         },
@@ -12649,6 +13090,28 @@
               "recoveries": 2,
               "duels_won": 8
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 8.3,
+            "stats": {
+              "minutes_played": 19,
+              "goals": 1,
+              "assists": 1,
+              "expected_goals_xg": 0.36,
+              "expected_assists_xa": 0.2,
+              "accurate_passes": 8,
+              "chances_created": 1,
+              "big_chances_created": 1,
+              "shots_on_target": 2,
+              "touches": 16,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 1
+            }
           }
         },
         "zodiac": "Leo",
@@ -13120,6 +13583,25 @@
               "interceptions": 0,
               "recoveries": 2,
               "duels_won": 1
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.3,
+            "stats": {
+              "minutes_played": 89,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.11,
+              "accurate_passes": 17,
+              "chances_created": 2,
+              "touches": 41,
+              "clearances": 2,
+              "interceptions": 1,
+              "recoveries": 2,
+              "duels_won": 2
             }
           }
         },
@@ -14306,6 +14788,27 @@
               "recoveries": 3,
               "duels_won": 1
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.2,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.02,
+              "expected_assists_xa": 0.06,
+              "accurate_passes": 34,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 57,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 2,
+              "duels_won": 5
+            }
           }
         },
         "zodiac": "Virgo",
@@ -14369,6 +14872,27 @@
               "clearances": 4,
               "interceptions": 1,
               "recoveries": 3,
+              "duels_won": 5
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.05,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 56,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 81,
+              "clearances": 10,
+              "interceptions": 0,
+              "recoveries": 4,
               "duels_won": 5
             }
           }
@@ -14491,6 +15015,25 @@
               "clearances": 2,
               "interceptions": 2,
               "recoveries": 7,
+              "duels_won": 3
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 7.3,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.04,
+              "accurate_passes": 51,
+              "chances_created": 0,
+              "touches": 75,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 6,
               "duels_won": 3
             }
           }
@@ -15110,6 +15653,24 @@
               "recoveries": 2,
               "duels_won": 1
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 5.9,
+            "stats": {
+              "minutes_played": 86,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 33,
+              "chances_created": 0,
+              "touches": 44,
+              "clearances": 3,
+              "interceptions": 0,
+              "recoveries": 3,
+              "duels_won": 2
+            }
           }
         },
         "zodiac": "Libra",
@@ -15139,6 +15700,24 @@
               "interceptions": 3,
               "recoveries": 2,
               "duels_won": 15
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 5.9,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 31,
+              "chances_created": 0,
+              "touches": 56,
+              "clearances": 4,
+              "interceptions": 2,
+              "recoveries": 3,
+              "duels_won": 5
             }
           }
         },
@@ -16250,7 +16829,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 7,
+            "overallRating": 7.1,
             "stats": {
               "minutes_played": 90,
               "goals": 0,
@@ -16258,11 +16837,11 @@
               "expected_assists_xa": 0.36,
               "accurate_passes": 80,
               "chances_created": 0,
-              "touches": 117,
+              "touches": 118,
               "clearances": 6,
               "interceptions": 0,
               "recoveries": 2,
-              "duels_won": 8
+              "duels_won": 9
             }
           }
         },
@@ -16514,6 +17093,25 @@
               "recoveries": 3,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 7.5,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.02,
+              "accurate_passes": 67,
+              "chances_created": 1,
+              "touches": 82,
+              "clearances": 8,
+              "interceptions": 0,
+              "recoveries": 3,
+              "duels_won": 4
+            }
           }
         },
         "zodiac": "Libra",
@@ -16547,6 +17145,27 @@
               "interceptions": 0,
               "recoveries": 1
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 8.6,
+            "stats": {
+              "minutes_played": 19,
+              "goals": 2,
+              "assists": 0,
+              "expected_goals_xg": 0.51,
+              "expected_assists_xa": 0.02,
+              "accurate_passes": 9,
+              "chances_created": 0,
+              "shots_on_target": 2,
+              "touches": 22,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 1,
+              "duels_won": 1
+            }
           }
         },
         "zodiac": "Libra",
@@ -16578,6 +17197,27 @@
               "clearances": 0,
               "interceptions": 1,
               "recoveries": 9
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 8.6,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 1,
+              "assists": 0,
+              "expected_goals_xg": 0.8,
+              "expected_assists_xa": 0.07,
+              "accurate_passes": 95,
+              "chances_created": 1,
+              "shots_on_target": 1,
+              "touches": 116,
+              "clearances": 0,
+              "interceptions": 1,
+              "recoveries": 7,
+              "duels_won": 4
             }
           }
         },
@@ -17318,10 +17958,30 @@
         "pos": "DF",
         "name": "David Zima",
         "date_of_birth": "2000-11-08",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.4,
+            "stats": {
+              "minutes_played": 12,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 7,
+              "chances_created": 0,
+              "touches": 11,
+              "clearances": 2,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 2
+            }
+          }
+        },
         "zodiac": "Scorpio",
         "fifa_code": "CZE",
-        "id": "CZE-2"
+        "id": "CZE-2",
+        "status": "played"
       },
       {
         "number": 17,
@@ -17346,6 +18006,27 @@
               "interceptions": 1,
               "recoveries": 3,
               "duels_won": 4
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.3,
+            "stats": {
+              "minutes_played": 23,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.03,
+              "expected_assists_xa": 0.1,
+              "accurate_passes": 4,
+              "chances_created": 1,
+              "shots_on_target": 0,
+              "touches": 12,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 1
             }
           }
         },
@@ -17704,7 +18385,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 6.1,
+            "overallRating": 6.2,
             "stats": {
               "minutes_played": 58,
               "goals": 0,
@@ -18247,20 +18928,65 @@
         "pos": "FW",
         "name": "Relebohile Mofokeng",
         "date_of_birth": "2004-10-23",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.2,
+            "stats": {
+              "minutes_played": 45,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.05,
+              "expected_assists_xa": 0.04,
+              "accurate_passes": 16,
+              "chances_created": 1,
+              "shots_on_target": 1,
+              "touches": 26,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 1
+            }
+          }
+        },
         "zodiac": "Scorpio",
         "fifa_code": "RSA",
-        "id": "RSA-10"
+        "id": "RSA-10",
+        "status": "played"
       },
       {
         "number": 12,
         "pos": "FW",
         "name": "Thapelo Maseko",
         "date_of_birth": "2003-11-11",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.8,
+            "stats": {
+              "minutes_played": 84,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.15,
+              "expected_assists_xa": 0.02,
+              "accurate_passes": 17,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 37,
+              "clearances": 0,
+              "interceptions": 1,
+              "recoveries": 3,
+              "duels_won": 6
+            }
+          }
+        },
         "zodiac": "Scorpio",
         "fifa_code": "RSA",
-        "id": "RSA-12"
+        "id": "RSA-12",
+        "status": "played"
       },
       {
         "number": 5,
@@ -18414,6 +19140,27 @@
               "interceptions": 0,
               "recoveries": 3,
               "duels_won": 6
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.8,
+            "stats": {
+              "minutes_played": 71,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.1,
+              "expected_assists_xa": 0.03,
+              "accurate_passes": 13,
+              "chances_created": 1,
+              "shots_on_target": 2,
+              "touches": 42,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 3,
+              "duels_won": 4
             }
           }
         },
@@ -18913,6 +19660,22 @@
               "touches": 38,
               "interceptions": 0
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 5,
+            "stats": {
+              "minutes_played": 90,
+              "saves": 3,
+              "accurate_passes": 20,
+              "recoveries": 9,
+              "clearances": 1,
+              "touches": 48,
+              "duels_won": 1,
+              "interceptions": 0
+            }
           }
         },
         "zodiac": "Sagittarius",
@@ -18944,6 +19707,24 @@
               "interceptions": 0,
               "recoveries": 3,
               "duels_won": 10
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": null,
+            "stats": {
+              "minutes_played": 4,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 2,
+              "chances_created": 0,
+              "touches": 3,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 1
             }
           }
         },
@@ -20424,6 +21205,27 @@
               "interceptions": 0,
               "recoveries": 1
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 5.7,
+            "stats": {
+              "minutes_played": 66,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.06,
+              "expected_assists_xa": 0.08,
+              "accurate_passes": 8,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 19,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 2
+            }
           }
         },
         "zodiac": "Sagittarius",
@@ -20501,6 +21303,22 @@
               "recoveries": 8,
               "clearances": 1,
               "touches": 28,
+              "interceptions": 0
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.4,
+            "stats": {
+              "minutes_played": 90,
+              "saves": 2,
+              "accurate_passes": 24,
+              "recoveries": 6,
+              "clearances": 1,
+              "touches": 42,
+              "duels_won": 2,
               "interceptions": 0
             }
           }
@@ -21379,6 +22197,25 @@
               "recoveries": 7,
               "duels_won": 5
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 5.9,
+            "stats": {
+              "minutes_played": 35,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.32,
+              "accurate_passes": 12,
+              "chances_created": 1,
+              "touches": 24,
+              "clearances": 1,
+              "interceptions": 0,
+              "recoveries": 4,
+              "duels_won": 2
+            }
           }
         },
         "zodiac": "Capricorn",
@@ -21651,15 +22488,14 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 6.5,
+            "overallRating": 7.4,
             "stats": {
               "minutes_played": 32,
               "goals": 0,
-              "assists": 0,
-              "expected_goals_xg": 0.06,
+              "assists": 1,
               "accurate_passes": 1,
-              "chances_created": 0,
-              "shots_on_target": 0,
+              "chances_created": 1,
+              "big_chances_created": 1,
               "touches": 13,
               "clearances": 0,
               "interceptions": 0,
@@ -21683,7 +22519,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 6.7,
+            "overallRating": 6.6,
             "stats": {
               "minutes_played": 90,
               "goals": 0,
@@ -21691,7 +22527,7 @@
               "expected_goals_xg": 0.11,
               "expected_assists_xa": 0.01,
               "accurate_passes": 18,
-              "chances_created": 1,
+              "chances_created": 0,
               "shots_on_target": 0,
               "touches": 36,
               "clearances": 0,
@@ -22476,6 +23312,27 @@
               "recoveries": 3,
               "duels_won": 1
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 7.3,
+            "stats": {
+              "minutes_played": 71,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.06,
+              "expected_assists_xa": 0.03,
+              "accurate_passes": 27,
+              "chances_created": 1,
+              "shots_on_target": 0,
+              "touches": 45,
+              "clearances": 2,
+              "interceptions": 0,
+              "recoveries": 1,
+              "duels_won": 7
+            }
           }
         },
         "zodiac": "Capricorn",
@@ -22488,10 +23345,30 @@
         "pos": "FW",
         "name": "Cedric Itten",
         "date_of_birth": "1996-12-27",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": null,
+            "stats": {
+              "minutes_played": 1,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 1,
+              "chances_created": 0,
+              "touches": 3,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0,
+              "duels_won": 1
+            }
+          }
+        },
         "zodiac": "Capricorn",
         "fifa_code": "SUI",
-        "id": "SUI-26"
+        "id": "SUI-26",
+        "status": "played"
       },
       {
         "number": 4,
@@ -23244,6 +24121,27 @@
               "recoveries": 2,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.3,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.02,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 17,
+              "chances_created": 0,
+              "shots_on_target": 1,
+              "touches": 37,
+              "clearances": 4,
+              "interceptions": 0,
+              "recoveries": 7,
+              "duels_won": 5
+            }
           }
         },
         "zodiac": "Aquarius",
@@ -23678,6 +24576,24 @@
               "recoveries": 3,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.4,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 32,
+              "chances_created": 0,
+              "touches": 47,
+              "clearances": 4,
+              "interceptions": 1,
+              "recoveries": 0,
+              "duels_won": 3
+            }
           }
         },
         "zodiac": "Aquarius",
@@ -23707,6 +24623,27 @@
               "interceptions": 0,
               "recoveries": 0,
               "duels_won": 2
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.2,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.2,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 20,
+              "chances_created": 0,
+              "shots_on_target": 1,
+              "touches": 34,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 4,
+              "duels_won": 3
             }
           }
         },
@@ -24140,7 +25077,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 6.6,
+            "overallRating": 6.5,
             "stats": {
               "minutes_played": 58,
               "goals": 0,
@@ -24884,7 +25821,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 6.3,
+            "overallRating": 6.4,
             "stats": {
               "minutes_played": 63,
               "goals": 0,
@@ -24961,11 +25898,11 @@
               "chances_created": 2,
               "big_chances_created": 1,
               "shots_on_target": 0,
-              "touches": 71,
+              "touches": 70,
               "clearances": 1,
               "interceptions": 0,
               "recoveries": 5,
-              "duels_won": 5
+              "duels_won": 4
             }
           }
         },
@@ -25024,7 +25961,7 @@
             "matchId": "4667826",
             "homeTeam": "GHA",
             "awayTeam": "PAN",
-            "overallRating": 7.6,
+            "overallRating": 7.3,
             "stats": {
               "minutes_played": 90,
               "goals": 0,
@@ -25032,7 +25969,7 @@
               "expected_assists_xa": 0.05,
               "accurate_passes": 33,
               "chances_created": 3,
-              "touches": 78,
+              "touches": 79,
               "clearances": 1,
               "interceptions": 0,
               "recoveries": 7,
@@ -25347,6 +26284,21 @@
               "touches": 55,
               "interceptions": 1
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.1,
+            "stats": {
+              "minutes_played": 90,
+              "saves": 2,
+              "accurate_passes": 48,
+              "recoveries": 3,
+              "clearances": 1,
+              "touches": 68,
+              "interceptions": 0
+            }
           }
         },
         "zodiac": "Aquarius",
@@ -25387,6 +26339,27 @@
               "interceptions": 2,
               "recoveries": 4,
               "duels_won": 4
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 8.6,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 1,
+              "assists": 0,
+              "expected_goals_xg": 0.8,
+              "expected_assists_xa": 0.26,
+              "accurate_passes": 93,
+              "chances_created": 5,
+              "shots_on_target": 1,
+              "touches": 120,
+              "clearances": 1,
+              "interceptions": 2,
+              "recoveries": 8,
+              "duels_won": 6
             }
           }
         },
@@ -25551,6 +26524,28 @@
               "recoveries": 0,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 7.5,
+            "stats": {
+              "minutes_played": 89,
+              "goals": 0,
+              "assists": 1,
+              "expected_goals_xg": 0.15,
+              "expected_assists_xa": 0.12,
+              "accurate_passes": 10,
+              "chances_created": 2,
+              "big_chances_created": 1,
+              "shots_on_target": 0,
+              "touches": 26,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 2,
+              "duels_won": 5
+            }
           }
         },
         "zodiac": "Aquarius",
@@ -25563,10 +26558,31 @@
         "pos": "MF",
         "name": "Djibril Sow",
         "date_of_birth": "1997-02-06",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.8,
+            "stats": {
+              "minutes_played": 19,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 8,
+              "chances_created": 0,
+              "touches": 11,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 1,
+              "duels_won": 1
+            }
+          }
+        },
         "zodiac": "Aquarius",
         "fifa_code": "SUI",
-        "id": "SUI-15"
+        "id": "SUI-15",
+        "status": "played"
       },
       {
         "number": 18,
@@ -25603,6 +26619,25 @@
               "clearances": 0,
               "interceptions": 0,
               "recoveries": 0
+            }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 7,
+            "stats": {
+              "minutes_played": 71,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.03,
+              "accurate_passes": 26,
+              "chances_created": 0,
+              "touches": 42,
+              "clearances": 0,
+              "interceptions": 1,
+              "recoveries": 1,
+              "duels_won": 5
             }
           }
         },
@@ -26227,6 +27262,24 @@
               "recoveries": 6,
               "duels_won": 9
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6,
+            "stats": {
+              "minutes_played": 80,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 36,
+              "chances_created": 0,
+              "touches": 63,
+              "clearances": 11,
+              "interceptions": 3,
+              "recoveries": 3,
+              "duels_won": 3
+            }
           }
         },
         "zodiac": "Pisces",
@@ -26260,6 +27313,24 @@
               "recoveries": 5,
               "duels_won": 5
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6,
+            "stats": {
+              "minutes_played": 63,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 20,
+              "chances_created": 0,
+              "touches": 24,
+              "clearances": 0,
+              "interceptions": 2,
+              "recoveries": 2
+            }
           }
         },
         "zodiac": "Pisces",
@@ -26272,20 +27343,62 @@
         "pos": "FW",
         "name": "Edin Džeko",
         "date_of_birth": "1986-03-17",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.5,
+            "stats": {
+              "minutes_played": 64,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.16,
+              "expected_assists_xa": 0.15,
+              "accurate_passes": 16,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 32,
+              "clearances": 2,
+              "interceptions": 1,
+              "recoveries": 2,
+              "duels_won": 3
+            }
+          }
+        },
         "zodiac": "Pisces",
         "fifa_code": "BIH",
-        "id": "BIH-11"
+        "id": "BIH-11",
+        "status": "played"
       },
       {
         "number": 16,
         "pos": "MF",
         "name": "Amir Hadžiahmetović",
         "date_of_birth": "1997-03-08",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": null,
+            "stats": {
+              "minutes_played": 4,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 3,
+              "chances_created": 0,
+              "touches": 4,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0
+            }
+          }
+        },
         "zodiac": "Pisces",
         "fifa_code": "BIH",
-        "id": "BIH-16"
+        "id": "BIH-16",
+        "status": "played"
       },
       {
         "number": 20,
@@ -26310,6 +27423,23 @@
               "recoveries": 4,
               "duels_won": 3
             }
+          },
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 5.8,
+            "stats": {
+              "minutes_played": 26,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 9,
+              "chances_created": 0,
+              "touches": 15,
+              "clearances": 0,
+              "interceptions": 1,
+              "recoveries": 1
+            }
           }
         },
         "zodiac": "Pisces",
@@ -26322,10 +27452,31 @@
         "pos": "MF",
         "name": "Ermin Mahmić",
         "date_of_birth": "2005-03-14",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": null,
+            "stats": {
+              "minutes_played": 1,
+              "goals": 1,
+              "assists": 0,
+              "expected_goals_xg": 0.04,
+              "accurate_passes": 0,
+              "chances_created": 0,
+              "shots_on_target": 1,
+              "touches": 2,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 0
+            }
+          }
+        },
         "zodiac": "Pisces",
         "fifa_code": "BIH",
-        "id": "BIH-26"
+        "id": "BIH-26",
+        "status": "played"
       },
       {
         "number": 5,
@@ -26715,6 +27866,24 @@
               "clearances": 1,
               "interceptions": 1,
               "recoveries": 3,
+              "duels_won": 2
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.2,
+            "stats": {
+              "minutes_played": 23,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 8,
+              "chances_created": 0,
+              "touches": 13,
+              "clearances": 0,
+              "interceptions": 0,
+              "recoveries": 2,
               "duels_won": 2
             }
           }
@@ -28024,6 +29193,27 @@
               "recoveries": 1,
               "duels_won": 2
             }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 6.5,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_goals_xg": 0.01,
+              "expected_assists_xa": 0.02,
+              "accurate_passes": 30,
+              "chances_created": 0,
+              "shots_on_target": 0,
+              "touches": 45,
+              "clearances": 1,
+              "interceptions": 1,
+              "recoveries": 2,
+              "duels_won": 3
+            }
           }
         },
         "zodiac": "Pisces",
@@ -28093,6 +29283,25 @@
               "interceptions": 0,
               "recoveries": 4,
               "duels_won": 3
+            }
+          },
+          "day2": {
+            "matchId": "4667753",
+            "homeTeam": "CZE",
+            "awayTeam": "RSA",
+            "overallRating": 7.6,
+            "stats": {
+              "minutes_played": 90,
+              "goals": 0,
+              "assists": 0,
+              "expected_assists_xa": 0.01,
+              "accurate_passes": 80,
+              "chances_created": 1,
+              "touches": 94,
+              "clearances": 5,
+              "interceptions": 1,
+              "recoveries": 6,
+              "duels_won": 4
             }
           }
         },
@@ -28358,10 +29567,29 @@
         "pos": "DF",
         "name": "Silvan Widmer",
         "date_of_birth": "1993-03-05",
-        "matches": {},
+        "matches": {
+          "day2": {
+            "matchId": "4667759",
+            "homeTeam": "SUI",
+            "awayTeam": "BIH",
+            "overallRating": 6.6,
+            "stats": {
+              "minutes_played": 86,
+              "goals": 0,
+              "assists": 0,
+              "accurate_passes": 20,
+              "chances_created": 0,
+              "touches": 45,
+              "clearances": 4,
+              "interceptions": 0,
+              "recoveries": 3
+            }
+          }
+        },
         "zodiac": "Pisces",
         "fifa_code": "SUI",
-        "id": "SUI-3"
+        "id": "SUI-3",
+        "status": "played"
       },
       {
         "number": 20,
