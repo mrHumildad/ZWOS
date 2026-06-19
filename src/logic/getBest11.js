@@ -21,6 +21,15 @@ export const getFantaRating = (p, dayN) => {
   return Number(p?.overallRating ?? 4);
 };
 
+export const getAverageRating = (p) => {
+  if (!p.matches) return Number(p?.overallRating ?? 4);
+  const ratings = Object.values(p.matches)
+    .filter(m => m.overallRating != null)
+    .map(m => Number(m.overallRating));
+  if (ratings.length === 0) return Number(p?.overallRating ?? 4);
+  return ratings.reduce((sum, r) => sum + r, 0) / ratings.length;
+};
+
 export const getShortName = (name) => {
   if (!name) return "";
   const parts = name.trim().split(/\s+/);

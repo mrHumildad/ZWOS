@@ -1,7 +1,10 @@
+import { useLanguage } from '../i18n/LanguageContext.jsx';
+
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="zw-footer">
-      <div>ZODIACSOCCER</div>
+      <div>{t('footer')}</div>
     </footer>
   );
 };

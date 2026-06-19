@@ -361,6 +361,21 @@ table {
   animation: cosmicPulse 3.5s ease-in-out infinite;
 }
 
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 8px var(--cosmic-blue);
+  }
+  50% {
+    opacity: 0.4;
+    text-shadow: 0 0 16px var(--cosmic-blue);
+  }
+}
+
+.zw-live-pulse {
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+
 .zw-section {
   margin: 0 auto;
   max-width: 1100px;

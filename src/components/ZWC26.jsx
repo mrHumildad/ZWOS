@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import zodiacTeams from '../../data/updatedZTeams.json';
 import { getFlagFromFifaCode } from '../logic/getBest11';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 
 const ZWC26 = () => {
+  const { t } = useLanguage();
   const zTeams = zodiacTeams;
   const [selectedTeam, setSelectedTeam] = useState(null);
   const signColor = selectedTeam ? `var(--${selectedTeam.name.toLowerCase()})` : 'var(--cosmic-blue)';
@@ -58,7 +60,7 @@ const ZWC26 = () => {
             );
           })}
           <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <button onClick={() => setSelectedTeam(null)} className="zw-btn">Back to all teams</button>
+            <button onClick={() => setSelectedTeam(null)} className="zw-btn">{t('backToTeams')}</button>
           </div>
         </div>
       ) : (

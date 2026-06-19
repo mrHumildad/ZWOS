@@ -43,6 +43,12 @@
   opacity: .5;
 }
 
+.score-board-live {
+  color: var(--cosmic-blue-soft);
+  text-shadow:
+    0 0 20px rgba(76, 125, 255, 0.35);
+}
+
 .match-ratings {
   display: flex;
   justify-content: center;
@@ -86,9 +92,9 @@
 
 .home-zodiac-bg{
   position:absolute;
-  bottom:5%;
+  top:77.8%;
   left:50%;
-  transform:translateX(-50%);
+  transform:translate(-50%,-50%);
   opacity:.06;
   pointer-events:none;
   z-index:0;
@@ -97,9 +103,9 @@
 
 .away-zodiac-bg{
   position:absolute;
-  top:5%;
+  top:22.2%;
   left:50%;
-  transform:translateX(-50%);
+  transform:translate(-50%,-50%);
   opacity:.06;
   pointer-events:none;
   z-index:0;
@@ -272,12 +278,24 @@
   font-size:.75rem;
 }
 
+.player-core-wrapper{
+  position:relative;
+  width:1.2rem;
+  height:1.2rem;
+}
+
 .player-rating{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
   font-size:.8rem;
   line-height:1;
   color:var(--gold-light);
   font-weight:600;
   text-align:center;
+  pointer-events:none;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6);
 }
 
 .back-row {
@@ -297,12 +315,9 @@
 }
 
 .player-core{
-
   width:1.2rem;
   height:1.2rem;
-
   border-radius:50%;
-
   animation:
     zodiacPulse 6s ease-in-out infinite;
 }
